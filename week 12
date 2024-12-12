@@ -1,0 +1,59 @@
+def print_numbers(n):
+    if n > 0:
+        print_numbers(n - 1)
+        print(n)
+print_numbers(5)
+
+
+
+def recursive_multiplication(x, y):
+    if y == 0:
+        return 0
+    else:
+        return x + recursive_multiplication(x, y - 1)
+result = recursive_multiplication(7, 4)
+print(result) 
+
+
+
+def print_asterisks(n):
+    if n > 0:
+        print_asterisks(n - 1)
+        print('*' * n)
+print_asterisks(5)
+
+
+
+def find_largest(lst):
+    # Base case: if the list has only one element, return that element
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        # Recursive case: compare the first element with the largest of the rest of the list
+        max_of_rest = find_largest(lst[1:])
+        return lst[0] if lst[0] > max_of_rest else max_of_rest
+numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+largest = find_largest(numbers)
+print(f"The largest value in the list is: {largest}")
+
+
+
+
+def recursive_sum(lst):
+    if not lst:
+        return 0
+    else:
+        return lst[0] + recursive_sum(lst[1:])
+numbers = [1, 2, 3, 4, 5]
+total = recursive_sum(numbers)
+print(f"The sum of the numbers in the list is: {total}")
+
+
+
+def recursive_sum(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + recursive_sum(n - 1)
+result = recursive_sum(50)
+print(f"The sum of all integers from 1 to 50 is: {result}")
